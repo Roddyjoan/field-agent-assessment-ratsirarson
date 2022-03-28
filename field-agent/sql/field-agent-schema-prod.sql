@@ -37,6 +37,7 @@ create table security_clearance (
     `name` varchar(50) not null
 );
 
+
 create table mission (
     mission_id int primary key auto_increment,
     code_name varchar(50) not null,

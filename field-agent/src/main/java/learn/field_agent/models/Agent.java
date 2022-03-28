@@ -13,6 +13,24 @@ public class Agent {
     private LocalDate dob;
     private int heightInInches;
     private List<AgentAgency> agencies = new ArrayList<>();
+    private SecurityClearance clearance;
+    private List<Alias> aliases;
+
+    public List<Alias> getAliases() {
+        return aliases;
+    }
+
+    public void setAliases(List<Alias> aliases) {
+        this.aliases = aliases;
+    }
+
+    public SecurityClearance getClearance() {
+        return clearance;
+    }
+
+    public void setClearance(SecurityClearance clearance) {
+        this.clearance = clearance;
+    }
 
     public int getAgentId() {
         return agentId;
