@@ -24,7 +24,7 @@ Content-Type: application/json
 
 {
     "name": "OtherAlias",
-    "agentId": 3
+    "agentId": 2
 }
 
 ###
@@ -61,5 +61,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{url}}/8 HTTP/1.1
+DELETE {{url}}/1 HTTP/1.1
 

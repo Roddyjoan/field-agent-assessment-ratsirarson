@@ -160,18 +160,18 @@ _Refer back to the "Spring Profiles, Error Handling, and CORS" lesson in the LMS
 ---
 ## Test Plan
 ### Security Clearance
-* [ ] GET all security clearances
-* [ ] GET a security clearance by ID
-* [ ] For GET return a 404 if security clearance is not found
-* [ ] POST a security clearance
-* [ ] For POST return a 400 if the security clearance fails one of the domain rules
-  * [ ] Security clearance name is required
-  * [ ] Name cannot be duplicated
-* [ ] PUT an existing security clearance
-* [ ] For PUT return a 400 if the security clearance fails one of the domain rules
-* [ ] DELETE a security clearance that is not in use by ID
-* [ ] For DELETE return a 404 if the security clearance is not found
-* [ ] For DELETE return a 400 if the security clearance is in use 
+* [x] GET all security clearances
+* [x] GET a security clearance by ID
+* [x] For GET return a 404 if security clearance is not found
+* [x] POST a security clearance
+* [x] For POST return a 400 if the security clearance fails one of the domain rules
+  * [x] Security clearance name is required
+  * [x] Name cannot be duplicated
+* [x] PUT an existing security clearance
+* [x] For PUT return a 400 if the security clearance fails one of the domain rules
+* [x] DELETE a security clearance that is not in use by ID
+* [x] For DELETE return a 404 if the security clearance is not found
+* [x] For DELETE return a 400 if the security clearance is in use 
 ### Alias
 * [ ] GET an agent record with aliases attached
 * [ ] POST an alias
