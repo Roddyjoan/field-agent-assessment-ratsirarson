@@ -80,7 +80,7 @@ function Editform(props){
        
         
         <form onSubmit={handleSubmit}>
-            <button className="btn btn-outline-info" onClick={showTheForm}>Edit Agent</button>
+            <button className="btn btn-dark" onClick={showTheForm}>Edit Agent</button>
         </form>
         {showForm &&(
         <div className="edit-form">

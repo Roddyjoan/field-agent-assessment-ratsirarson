@@ -1,5 +1,4 @@
 import { useState} from "react";
-import Agents from "./Agents";
 function Addform(props){
     const [firstName, setFirstName] =useState("");
     const [lastName, setLastName] = useState("");
@@ -59,7 +58,9 @@ function Addform(props){
 
     return(
         <>
+        <div className="add-form">
         <form onSubmit={handleSubmit}>
+            <h2><b><mark>ADD AN AGENT</mark></b></h2>
             <p>
             <label htmlFor="first-name">First Name(required):</label>
             <br />
@@ -79,7 +80,7 @@ function Addform(props){
             </p>
 
             <p>
-            <label htmlFor="date-of-birth">Date Of Birth(required):</label>
+            <label htmlFor="date-of-birth">Date Of Birth [yyyy-mm-dd] (required):</label>
             <br />
             <input onChange ={handleDobChange} id="date-of-birth"></input>
             </p>
@@ -93,7 +94,7 @@ function Addform(props){
             <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
         </form>
         
-        
+        </div>
         </>
     )
 

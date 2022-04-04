@@ -96,8 +96,8 @@ function Agents(){
 
     return (
         <>
-        <button className="btn btn-info" onClick={fetchAgents}>Show/Hide Agents</button>
-        <button className="btn btn-outline-info" onClick={showAddAgentForm}> Add an agent</button>
+        <button className="btn btn-secondary" onClick={fetchAgents}>Show/Hide Agents</button>
+        <button className="btn btn-secondary" onClick={showAddAgentForm}> Add an agent</button>
         
         {showAddForm && (
             <Addform 

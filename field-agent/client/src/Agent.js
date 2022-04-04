@@ -7,8 +7,9 @@ function Agent(props){
 
     return (
         <div className="agent-card">
-            <button id="put-right" className="btn btn-outline-danger" onClick={() => props.deleteAgent(props.agentObj.agentId)}>❌</button>
-            
+            <button id="put-right" className="btn btn-danger" onClick={() => props.deleteAgent(props.agentObj.agentId)}>X</button>
+            <h3 className ="top-secret"><u>TOP SECRET</u></h3>
+            <br />
             <p><b>First Name:</b>{firstName}</p>
             <p><b>Middle Name:</b>{middleName}</p>
             <p><b>Last Name:</b>{lastName}</p>

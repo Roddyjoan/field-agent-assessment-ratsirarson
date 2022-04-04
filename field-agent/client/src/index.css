@@ -31,3 +31,22 @@ button {
   float:right;
 }
 
+
+.add-form {
+  border: 3px rgb(0, 16, 0) solid;
+  margin-bottom: 15px;
+  padding: 25px;
+  background-color: #efefcf;
+}
+
+.agent-card{
+  background-color: #F5F5DC;
+}
+
+.edit-form{
+  background-color: #e6ded9;
+}
+.top-secret {
+  font-family: 'Top Secret', sans-serif;
+  color: red;
+}
