@@ -1,10 +1,14 @@
 import { useState} from "react";
-function Addform(props){
+import { useNavigate } from "react-router-dom";
+
+function Addform(){
     const [firstName, setFirstName] =useState("");
     const [lastName, setLastName] = useState("");
     const [middleName, setMiddleName] = useState("");
     const [dob, setDob] = useState("");
     const [heightInInches, setHeightInInches] = useState("");
+
+    const navigate=useNavigate();
 
     function handleMiddleNameChange(event){
         setMiddleName(event.target.value);
@@ -27,10 +31,6 @@ function Addform(props){
         setHeightInInches(event.target.value);
     }
 
-    function addAgent(agentObj){
-        props.setAgents([...props.agents, agentObj])
-    }
-
     function handleSubmit(e) {
         e.preventDefault();
         let agentCopy = {};
@@ -46,9 +46,12 @@ function Addform(props){
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(agentCopy)
-        }).then(
-            response => response.ok ? addAgent(agentCopy) : alert("Something went totally wrong, my b homie")
-        ).catch(
+        })
+        .then(response => {
+            alert(response.statusText +" agent");
+            navigate("/agents");
+        })
+        .catch(
             rejection => alert("should definitely not be seeing this! "+rejection)
         );
     }

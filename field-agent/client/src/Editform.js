@@ -129,3 +129,64 @@ function Editform(props){
 
 export default Editform;
 
+
+// import { useState } from "react";
+
+// function Editform(props) {
+//     // props.agentObj
+//     // props.agentObj.firstName
+//     // props.agents
+//     // props.setAgents
+
+//     const [firstName, setFirstName] = useState("");
+
+//     function editFormShow() {
+//         let editForm = document.querySelector("#edit-form-" + props.agentObj.id);
+//         if (editForm.classList.contains("hidden")) {
+//             editForm.classList.remove("hidden");
+//         } else {
+//             editForm.classList.add("hidden");
+//         }
+//     }
+
+//     function handleFirstNameChange(event) {
+//         setFirstName(event.target.value);
+//     }
+
+//     function replaceAgent(agentObj) {
+//         let filteredAgents = props.agents.filter(agent => agent.agentId !== agentObj.agentId);
+//         props.setAgents([agentObj, ...filteredAgents])
+//     }
+
+//     function handleSubmit(e) {
+//         e.preventDefault();
+//         let agentCopy = {...props.agentObj};
+//         agentCopy.firstName = firstName;
+
+//         fetch("http://localhost:8080/agents/" + agentCopy.id, {
+//             method: "PUT",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(agentCopy)
+//         }).then(
+//             response => response.ok ? replaceAgent(agentCopy) : alert("Something went wrong! " + response)
+//         ).catch(
+//             rejection => alert(rejection)
+//         );
+//         editFormShow();
+//     }
+
+//     return (
+//         <>
+//             <form id={"edit-form-" + props.agentObj.id} className="hidden" onSubmit={handleSubmit}>
+//                 <label htmlFor="first-name">First Name:</label><br />
+//                 <input onChange={handleFirstNameChange} id="first-name"></input><br />
+//                 <button>Submit</button>
+//             </form>
+//             <button onClick={editFormShow}>Delete Agent</button>
+//         </>
+//     )
+// }
+
+// export default Editform;

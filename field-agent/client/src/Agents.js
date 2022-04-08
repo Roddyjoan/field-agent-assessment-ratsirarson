@@ -39,14 +39,7 @@ function Agents(){
     // )
 
     const [agents, setAgents] = useState([]);
-    const [showAddForm, setShowAddFrom] = useState(false);
-    const [showAgentForm, setShowAgentForm] = useState(false);
 
-    
-    const showAddAgentForm = (e) => {
-        e.preventDefault();
-        setShowAddFrom(!showAddForm);
-    }
     function errorHandler(rejectionMessage){
         console.log(rejectionMessage)
     }
@@ -57,32 +50,9 @@ function Agents(){
     .then(response => response.json())
     .then(jsonData => setAgents(jsonData))
     .catch(rejection => () => errorHandler(rejection));
-    setShowAgentForm(!showAgentForm);
-    }
-    
-    function deleteAgent(id){
-        let confirm = window.confirm("Are you sure you wnat to eliminate this agent D:?")
-
-        if(confirm){
-        fetch("http://localhost:8080/api/agent/" + id, {
-        method: "DELETE",
-        })
-        .then(
-        alert("You eliminated this agent. Cold, dude :( ")
-        )
-
-        //then display the list again but without the deleted agent
-        fetch("http://localhost:8080/api/agent")
-        .then(response => response.json())
-        .then(jsonData => setAgents(jsonData))
-        .catch(rejection => () => errorHandler(rejection))
-
-        } else {
-            alert("Agent not eliminated :D")
-        }
-        
     }
 
+   
     function agentFactory(){
         return agents.map(agentObj => (
         <Agent 
@@ -90,24 +60,15 @@ function Agents(){
         agentObj={agentObj} 
         agents={agents}
         setAgents={setAgents}
-        deleteAgent={deleteAgent}
         />))
     }
 
     return (
         <>
-        <button className="btn btn-secondary" onClick={fetchAgents}>Show/Hide Agents</button>
-        <button className="btn btn-secondary" onClick={showAddAgentForm}> Add an agent</button>
+        {fetchAgents()}
+
+        {agentFactory()}
         
-        {showAddForm && (
-            <Addform 
-            agents={agents}
-            setAgents={setAgents}/>
-        )}
-        
-        {showAgentForm && (
-        agentFactory()
-        )}
         
        
 
