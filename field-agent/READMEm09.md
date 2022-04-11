@@ -2,11 +2,11 @@
 ## Tasks
 _TODO_ Add time estimates to each of the top-level tasks
 ### Part 0: Set Up and Planning
-* [ ] Create a new GitHub repo for this assessment or continue working in the repo from last week's React Field Agent repository (#.# hours)
-  * [ ] **When creating your repo, be sure to add a `.gitignore` file using the GitHub Node template**
-  * [ ] Update the README with the contents from this file
-  * [ ] If not done, add the instruction team as collaborators
-* [ ] Create a new branch for all work on the assessment
+* [x] Create a new GitHub repo for this assessment or continue working in the repo from last week's React Field Agent repository (#.# hours)
+  * [x] **When creating your repo, be sure to add a `.gitignore` file using the GitHub Node template**
+  * [x] Update the README with the contents from this file
+  * [x] If not done, add the instruction team as collaborators
+* [x] Create a new branch for all work on the assessment
   * From within the local repo, create the branch by running the command `git checkout -b assessment-work` (this command creates a branch named `assessment-work` and makes the new branch the active branch)
   * Push the branch to the remote repo by running the command `git push --set-upstream origin assessment-work`
   * _Now just stay on the `assessment-work` branch and use the normal git workflow:_
@@ -16,16 +16,16 @@ _TODO_ Add time estimates to each of the top-level tasks
     * Run `git commit -m "Some commit message"` to commit changes
     * Run `git push` to push changes to the remote repo
     * Rinse and repeat!
-* [ ] Download the starter project for this assessment and add the files to your repo
+* [x] Download the starter project for this assessment and add the files to your repo
   * **See your instruction team for the correct files to use!**
-* [ ] Review the requirements (#.# hours)
-* [ ] Identify any research that I need to do (#.# hours)
+* [x] Review the requirements (#.# hours)
+* [x] Identify any research that I need to do (#.# hours)
 ---
 _Note: The following sequence of tasks is focused on keeping refactoring to a minimum. To that end, tasks related to user login and registration are to be completed before any tasks related to updating the Agents CRUD UI. This is necessary because the Secured Field Agent app requires a valid auth token for all Field Agent API HTTP requests._
 ### Part 1: Back-End Updates
 _Use the SQL script included in the starter code to create your database and the initial data_
-* [ ] Create the AuthController with an endpoint for authenticating users (#.# hours)
-* [ ] Update the security configuration ant matchers to allow anonymous requests to the AuthController endpoint for authenticating users (#.# hours)
+* [x] Create the AuthController with an endpoint for authenticating users (#.# hours)
+* [x] Update the security configuration ant matchers to allow anonymous requests to the AuthController endpoint for authenticating users (#.# hours)
 **Make sure that my GitHub repo is updated (i.e. push all commits to my local feature branch to the remote repo)!**
 ### Part 2: Client-Side Routes
 * [ ] Implement the required client-side routes (#.# hours)

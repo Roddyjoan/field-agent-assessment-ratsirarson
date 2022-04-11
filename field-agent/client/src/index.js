@@ -6,19 +6,11 @@ import {
   Route,
 } from "react-router-dom";
 import './index.css';
-import Home from './Home';
-import Nav from './Nav';
-import Agents from './Agents'
-import Addform from './Addform';
+import App from './App';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Nav />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="agents" element={<Agents />} />
-      <Route path="add" element={<Addform />} />
-    </Routes>
+   <App />
   </BrowserRouter>,
   document.getElementById('root')
 );

@@ -48,8 +48,13 @@ function Addform(){
             body: JSON.stringify(agentCopy)
         })
         .then(response => {
-            alert(response.statusText +" agent");
+            if (response.status === 201){
+            alert("Agent Added");
             navigate("/agents");
+            }
+            else {
+                alert("You cannot Add an agent if you are not an Admin!")
+            }
         })
         .catch(
             rejection => alert("should definitely not be seeing this! "+rejection)

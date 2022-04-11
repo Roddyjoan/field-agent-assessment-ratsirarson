@@ -50,3 +50,21 @@ button {
   font-family: 'Top Secret', sans-serif;
   color: red;
 }
+
+.login-form {
+  border: 3px rgb(0, 16, 0) solid;
+  padding: 25px;
+  margin-right: 75%;
+  position: absolute;
+}
+
+.logout-button {
+  color: red;
+  size: 10px;
+  float:right;
+  margin-top:-5%;
+}
+
+.welcome {
+  color:rgb(167, 167, 11);
+}

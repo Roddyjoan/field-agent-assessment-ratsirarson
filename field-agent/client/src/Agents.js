@@ -1,58 +1,38 @@
 
-import { useState } from "react";
-import Addform from "./Addform";
+import { useState, useEffect } from "react";
 import Agent from "./Agent";
 
 function Agents(){
-    // fetch(URL-TO-ENDPOINT, INITIALIZATION-OBJECT);
-
-    //FOR A POST REQUEST
-    // fetch("http://localhost:8080/api/agent", {
-    //     // fetch/CRUD method:
-
-    //     method: "POST",
-    //     //data object will be sent in JSON format
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-
-    //     //the data object I am sending 
-    //     body: JSON.stringify({name: "Bond, James Bond"})
-    // })
-    // fetch("http://localhost:8080/api/agent", {
-    //     // fetch/CRUD method:
-
-    //     method: "POST",
-    //     //data object will be sent in JSON format
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-
-    //     //the data object I am sending 
-    //     body: JSON.stringify({name: "Bond, James Bond"})
-    // })
-    // .then(
-    //     DO SOMETHING WITH THE DATA
-    // )
-    // .catch(
-    //     DO SOMETHING ELSE IF FAILURE
-    // )
-
     const [agents, setAgents] = useState([]);
 
     function errorHandler(rejectionMessage){
         console.log(rejectionMessage)
     }
 
+   
 
-    function fetchAgents(){
-    fetch("http://localhost:8080/api/agent")
-    .then(response => response.json())
-    .then(jsonData => setAgents(jsonData))
+    useEffect(() => {
+    fetch("http://localhost:8080/api/agent", {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        }
+    })
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            alert("Something went wrong while fetching...");
+        }
+    })
+    .then(agentData => setAgents(agentData))
     .catch(rejection => () => errorHandler(rejection));
+    }, []);
+
+    function removeFromState(toDeleteId){
+        setAgents(agents.filter(agent => agent.agentId !== toDeleteId))
     }
 
-   
     function agentFactory(){
         return agents.map(agentObj => (
         <Agent 
@@ -60,12 +40,12 @@ function Agents(){
         agentObj={agentObj} 
         agents={agents}
         setAgents={setAgents}
+        removeFromState={removeFromState}
         />))
     }
 
     return (
         <>
-        {fetchAgents()}
 
         {agentFactory()}
         

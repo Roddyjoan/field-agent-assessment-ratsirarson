@@ -1,6 +1,7 @@
 @url = http://localhost:8080/api/agent
 
 GET {{url}} HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmaWVsZC1hZ2VudCIsInN1YiI6ImpvaG5Ac21pdGguY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX0FETUlOIiwiZXhwIjoxNjQ5NjUwMzYwfQ.j6eRkzyLGJhI34MOy9ZzVg_K1qs_J9T1VTh5Cx2b3H4
 
 ###
 
