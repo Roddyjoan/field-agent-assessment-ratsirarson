@@ -1,27 +1,33 @@
 package learn.field_agent.domain;
 
 import learn.field_agent.data.AgentRepository;
+import learn.field_agent.data.AppUserRepository;
 import learn.field_agent.models.Agent;
+import learn.field_agent.models.AppUser;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class AgentService {
 
-    private final AgentRepository repository;
 
-    public AgentService(AgentRepository repository) {
-        this.repository = repository;
+    private final AgentRepository aRepository;
+
+    AppUserRepository uRepo;
+
+    public AgentService(AgentRepository aRepository) {
+        this.aRepository = aRepository;
     }
 
     public List<Agent> findAll() {
-        return repository.findAll();
+        return aRepository.findAll();
     }
 
     public Agent findById(int agentId) {
-        return repository.findById(agentId);
+        return aRepository.findById(agentId);
     }
 
     public Result<Agent> add(Agent agent) {
@@ -35,7 +41,7 @@ public class AgentService {
             return result;
         }
 
-        agent = repository.add(agent);
+        agent = aRepository.add(agent);
         result.setPayload(agent);
         return result;
     }
@@ -51,7 +57,7 @@ public class AgentService {
             return result;
         }
 
-        if (!repository.update(agent)) {
+        if (!aRepository.update(agent)) {
             String msg = String.format("agentId: %s, not found", agent.getAgentId());
             result.addMessage(msg, ResultType.NOT_FOUND);
         }
@@ -60,7 +66,7 @@ public class AgentService {
     }
 
     public boolean deleteById(int agentId) {
-        return repository.deleteById(agentId);
+        return aRepository.deleteById(agentId);
     }
 
     private Result<Agent> validate(Agent agent) {
@@ -88,4 +94,21 @@ public class AgentService {
 
         return result;
     }
+
+    public void edit(Agent edited) {
+
+    }
+
+//    public void edit(Agent edited, Principal user) {
+//        if( edited == null ){ throw new IllegalArgumentException( "agent is null" );}
+//
+//        Agent oldData = aRepository.findById(edited.getAgentId());
+//
+//        if (oldData == null) { throw new IllegalArgumentException( "invalid agent id" );}
+//
+//        if (edited.getFirstName() == null) { throw new IllegalArgumentException( "first name cannot be null" );}
+//        if (edited.getLastName() == null){ throw new IllegalArgumentException( "last name cannot be null" );}
+//
+//        AppUser matchingUser = uRepo.findById (edited.getUserId());
+//    }
 }

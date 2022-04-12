@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "./AuthContext";
 import DeleteAgent from "./DeleteAgent";
 import Editform from "./Editform";
@@ -7,6 +8,14 @@ function Agent(props){
     //props.agentObj...
     const {id, firstName, lastName, middleName, dob, heightInInches} = props.agentObj;
     const [ user, SetUser] = useContext(AuthContext);
+
+    function renderLink(){
+        const render = user.user.authorities === "ROLE_ADMIN";
+        if (render){
+           return <><br /> | <Link to={'/agents/edit/' + props.agentObj.agentId}>Edit this Agent</Link> | <br /></> 
+        }
+    }
+
 
     return (
         <div className="agent-card">
@@ -23,12 +32,14 @@ function Agent(props){
             <p><b>Last Name:</b>{lastName}</p>
             <p><b>dob: </b>{dob}</p>
             <p><b>height: </b>{heightInInches} inches</p>
+            {renderLink()}
             
-            <Editform 
+            
+            {/* <Editform 
             agentObj={props.agentObj}
             agents={props.agents}
             setAgents={props.setAgents}
-            />
+            /> */}
            
             
             

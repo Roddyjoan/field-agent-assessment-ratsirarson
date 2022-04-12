@@ -59,10 +59,15 @@ button {
 }
 
 .logout-button {
-  color: red;
-  size: 10px;
-  float:right;
-  margin-top:-5%;
+  
+  
+  background-color: white;
+      color: red;
+      text-align: left;
+      padding: 0px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
 }
 
 .welcome {

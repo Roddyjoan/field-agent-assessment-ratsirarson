@@ -21,7 +21,7 @@ function DeleteAgent(props) {
                         alert("Agent Successfully deleted!");
                         console.log(props.agentId);
                         props.removeFromState(props.agentId);
-                        Navigate("/agent")
+                        Navigate("/agents")
                         // removeFromState();
                     }
                     

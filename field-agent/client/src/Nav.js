@@ -24,6 +24,8 @@ function Nav() {
            return <><br /> | <Link to="/agents/add"> Add an Agent </Link> | <br /></> 
         }
     }
+
+  
     return (
         <nav>
             <li>
@@ -37,10 +39,12 @@ function Nav() {
                 <>
 
                     |
-                    <Link to="/agents"> Show All Agents</Link> 
-                    |
+                    <Link to="/agents"> Show All Agents</Link> | <br />
+                    
                     
                     {renderLink()}
+
+                   
 
                     
                     <button className="logout-button" onClick={logout}> Logout {user.user.sub}</button>

@@ -1,12 +1,14 @@
 package learn.field_agent.controllers;
 
 import learn.field_agent.domain.AgentService;
+import learn.field_agent.domain.InvalidUserException;
 import learn.field_agent.domain.Result;
 import learn.field_agent.models.Agent;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -57,6 +59,7 @@ public class AgentController {
 
         return ErrorResponse.build(result);
     }
+
 
     @DeleteMapping("/{agentId}")
     public ResponseEntity<Void> deleteById(@PathVariable int agentId) {
