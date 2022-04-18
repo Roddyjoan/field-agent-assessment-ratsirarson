@@ -1,0 +1,75 @@
+
+.agent-card {
+  border: 3px rgb(0, 16, 0) solid;
+  margin-bottom: 15px;
+  padding: 25px;
+
+}
+
+.edit-form{
+  border: 3px rgb(4, 4, 4) solid;
+  margin-bottom: 15px;
+  padding: 25px;
+}
+
+button {
+  margin-top:15px;
+  margin-bottom:15px;
+  margin-left: 15px;
+  padding: 10px;
+
+}
+
+/* .edit-form{
+  margin-top:15px;
+  margin-bottom:15px;
+  padding:25px;
+  position:absolute;
+} */
+
+#put-right {
+  float:right;
+}
+
+
+.add-form {
+  border: 3px rgb(0, 16, 0) solid;
+  margin-bottom: 15px;
+  padding: 25px;
+  background-color: #efefcf;
+}
+
+.agent-card{
+  background-color: #F5F5DC;
+}
+
+.edit-form{
+  background-color: #e6ded9;
+}
+.top-secret {
+  font-family: 'Top Secret', sans-serif;
+  color: red;
+}
+
+.login-form {
+  border: 3px rgb(0, 16, 0) solid;
+  padding: 25px;
+  margin-right: 75%;
+  position: absolute;
+}
+
+.logout-button {
+  
+  
+  background-color: white;
+      color: red;
+      text-align: left;
+      padding: 0px;
+      width: 200px;
+      transition: all 0.5s;
+      cursor: pointer;
+}
+
+.welcome {
+  color:rgb(167, 167, 11);
+}
