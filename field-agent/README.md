@@ -173,15 +173,15 @@ _Refer back to the "Spring Profiles, Error Handling, and CORS" lesson in the LMS
 * [x] For DELETE return a 404 if the security clearance is not found
 * [x] For DELETE return a 400 if the security clearance is in use 
 ### Alias
-* [ ] GET an agent record with aliases attached
-* [ ] POST an alias
-* [ ] For POST return a 400 if the alias fails one of the domain rules
-  * [ ] Name is required
-  * [ ] Persona is not required unless a name is duplicated. The persona differentiates between duplicate names.
-* [ ] PUT an alias
-* [ ] For PUT return a 400 if the alias fails one of the domain rules
-* [ ] DELETE an alias by ID
-* [ ] For DELETE Return a 404 if the alias is not found
+* [x] GET an agent record with aliases attached
+* [x] POST an alias
+* [x] For POST return a 400 if the alias fails one of the domain rules
+  * [x] Name is required
+  * [x] Persona is not required unless a name is duplicated. The persona differentiates between duplicate names.
+* [x] PUT an alias
+* [x] For PUT return a 400 if the alias fails one of the domain rules
+* [x] DELETE an alias by ID
+* [x] For DELETE Return a 404 if the alias is not found
 ### Global Error Handling
-* [ ] Return a specific data integrity error message for data integrity issues
-* [ ] Return a general error message for issues other than data integrity
+* [x] Return a specific data integrity error message for data integrity issues
+* [x] Return a general error message for issues other than data integrity
